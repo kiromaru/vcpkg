@@ -9,9 +9,13 @@ vcpkg_from_github(
 )
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
+    FEATURES
     ms-gsl SEAL_USE_MSGSL
     zlib SEAL_USE_ZLIB
     zstd SEAL_USE_ZSTD
+
+    INVERTED_FEATURES
+    no-throw-tran SEAL_THROW_ON_TRANSPARENT_CIPHERTEXT
 )
 
 vcpkg_configure_cmake(
